@@ -1,0 +1,312 @@
+
+<section class="min-vh-100" id="main">
+
+<!-- Page Content -->
+<div class="min-vh-100" id="">
+  <!-- Header/Home -->
+  <div class="min-vh-100 w3-padding-32 w3-center w3-black" id="home" >
+
+    <!--<i class="fa-solid fa-hat-cowboy"></i>-->
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span>
+
+      <img
+        width="100"
+        alt="Torito Logo"
+        src="https://res.cloudinary.com/dzyvb836r/image/upload/v1644816267/brand_gp5nbj.png"
+      ></h1>
+    <p>Burgers & Beers</p>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-10" id="viewGiftcard" >
+
+
+ <div class="min-vh-100">
+      
+<h2 class="titleProject"> Giftcard </h2>
+	<div   *ngIf="giftcards.length == 0">
+				<img  id="toroLoaderGcs" src="https://res.cloudinary.com/dzyvb836r/image/upload/v1656210951/9_tndsk3.gif">
+		
+	</div>
+
+ <div class="container p-1 d-flex justify-content-around">
+  
+ <div class="accordion " id="accordionExample"><!--ngfor loop started for dynamic data -->
+      
+<table class="table  bg-transparent ">
+  
+<tbody>
+
+ <tr style="color:white!important;">
+    
+      <td><span id="highL"> Nro:</span></td>    
+      <td><span id="highL"> Valor:</span></td>
+      <td><span id="highL"> Cliente:</span></td>
+      <td> <span id="highL">Consumida: </span></td>
+ </tr>
+    
+  </tbody>
+</table>
+
+
+      <div class="accordion-item" *ngFor="let giftcard of giftcards; let i = index" style="">
+        <h2 class="accordion-header" [id]="'heading'+i">
+       
+          <button class="accordion-button" [ngClass]="{ 'collapsed': i != 0 }" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i" id="buttonAcordion" style="">
+           
+
+<table class="table  bg-transparent " >
+  
+  <tbody>
+
+
+
+
+<a id="tGc" class="" [routerLink]="['/giftcard-edit',giftcard._id]"></a>
+
+
+    <tr    style="color:white!important;" >
+    <td ><span id="tGc">{{i}}</span></td>
+      <td><span id="tGc">$ {{giftcard.amount}}</span></td>
+      <td><span id="tGc">{{giftcard.client}}</span></td>
+     <td>
+      <span id="tGc"> <span id="tGc" *ngIf="giftcard.consumedDate"> <i class='fa fa-check-circle-o' style="color:rgba(48,178,74,0.8)!important;"></i></span>
+        <span id="tGc" *ngIf="!giftcard.consumedDate"> <i class='fa fa-times-rectangle' style="color:rgba(209,72,72,0.8)!important;"></i></span>
+     </span>
+     </td> 
+    </tr>
+  </tbody>
+</table>
+
+
+
+<!-- CLASE QUE SIRVE PARA MOSTRAR EL PRIMERO ABIERTO CON DATA DINAMICA [ngClass]="{ 'show': i == 0 }" -->
+
+
+          
+          </button>
+        </h2>
+        <div [id]="'collapse'+i" class="accordion-collapse collapse"  [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample"  style="">
+          <div class="accordion-body">
+           <div class="d-flex justify-content-center"  *ngIf="giftcard">
+                                      
+                  <img src="" *ngIf=""/><!--con el ngiF , significal que la tuliza si esta listada--->
+                            <div class="gC">
+
+                                          <table class="table">
+                                              <tr>
+                                                  <td><span id="highL2"> Valor:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.amount}}</span></td>
+                                              </tr>
+                                             <tr>
+                                                  <td><span id="highL2"> Status:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.status}}</span></td>
+                                              </tr>
+                                              <tr>
+                                                  <td><span id="highL2"> Comprador:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.buyerName}}</span></td>
+                                              </tr>
+                                              <tr>
+                                                  <td><span id="highL2"> Fecha de compra:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.issuedDate}}</span></td>
+                                              </tr>
+                                              <tr>
+                                                  <td><span id="highL2"> Fecha consumida:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.consumedDate}}</span></td>
+                                              </tr>
+                                              <tr>
+                                                  <td><span id="highL2"> Email comprador:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.buyerEmail}}</span></td>
+                                              </tr>
+                                              <tr>
+                                                  <td><span id="highL2"> Metodo de pago:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.payment_type}}</span></td>
+                                              </tr>
+                                              <tr>
+                                                  <td><span id="highL2"> Id de pago:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.payment_id}}</span></td>
+                                              </tr>   
+
+                                               <tr>
+                                                  <td><span id="highL2"> Id orden de compra:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.merchant_order_id}}</span></td>
+                                              </tr>  
+
+                                               <tr>
+                                                  <td><span id="highL2">Cliente :</span></td>
+                                                  <td><span id="tGc2">{{giftcard.client}}</span></td>
+                                              </tr>  
+
+                                               <tr>
+                                                  <td><span id="highL2"> Email cliente:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.emailClient}}</span></td>
+                                              </tr>  
+
+                                               <tr>
+                                                  <td><span id="highL2"> DNI:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.dni}}</span></td>
+                                              </tr>  
+                                                <tr>
+                                                  <td><span id="highL2"> Telefono:</span></td>
+                                                  <td><span id="tGc2">{{giftcard.phoneClient}}</span></td>
+                                              </tr>  
+
+                                                <tr>
+                                                  <td><span id="highL2"> Mongo-DB-Id:</span></td>
+                                                  <td><span id="tGc2">{{"["+giftcard._id+"]"}}</span></td>
+                                              </tr>
+
+
+                                          </table>
+
+                                           
+                                            <div  class="d-flex justify-content-center" *ngIf="confirm==false">
+
+                                                  <button id="btn1" class="btn btn-warning m-3 p-2" [routerLink]="['/giftcard-edit',giftcard._id]"><i class='fa fa-edit'></i>  Editar
+                                                  </button>
+
+                                                 
+                                            </div>
+
+                                            <div *ngIf="confirm==true">
+                                              
+                                                <span class="confirm">¿Estás seguro de eliminar la giftcard?</span>
+                                                <button class="btn btn-primary" ><a (click)="setConfirm(false)">Cancelar </a></button>
+                                                <button class="btn btn-primary"><a (click)="deleteGiftcard(giftcard._id)">Eliminar</a></button>
+
+                                            </div>  
+
+                                     </div>
+
+                            
+                      </div>  
+          </div>
+        </div>
+      </div>
+     
+     
+    </div>
+   
+  </div>
+
+
+  </div>
+
+
+
+
+
+	</div>
+    
+
+
+
+  </div>
+</div>
+
+  
+
+
+  
+
+
+
+</section>
+
+
+
+
+
+
+
+<!--
+<table class="table  bg-transparent ">
+  
+  <tbody>
+
+		<tr>
+      <td><span id="highL"> Valor:</span></td>
+      <td><span id="tGc">{{giftcard.amount}}</span></td>
+   	</tr>
+
+
+    <tr>
+      <td><span id="highL"> Cliente:</span></td>
+      <td><span id="tGc">{{giftcard.client}}</span></td>
+   	</tr>
+
+	<tr>
+     <td> <span id="highL">Id de pago: </span> </td>
+     <td> <span id="tGc">{{giftcard.payment_id}}</span></td>
+    </tr>
+
+<tr>    
+      <td>	 <span id="highL">Fecha de compra: </span></td>
+      <td><span id="tGc"> {{giftcard.issuedDate}}</span>	</td>
+</tr>
+
+
+<tr>    
+      <td>	
+     	<span id="highL">Consumida: </span></td>
+
+      <td>	
+
+      	<span id="tGc"> {{giftcard.consumedDate}}</span>	
+
+      </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+-->
+	
+
+
+
+
+<!--
+<div  class="container d-none d-lg-block">
+  <table class= " table " >
+
+
+    <tr  valign="top" class="rialGiftcard">
+      
+
+<table class="table  bg-transparent ">
+  
+  <tbody>
+
+  <tr style="color:white!important;">
+    <td><span id="highL"> Ver:</span></td>
+      <td><span id="highL"> Valor:</span></td>
+      <td><span id="highL"> Cliente:</span></td>
+       <td> <span id="highL">Consumida: </span></td>
+   
+    </tr>
+
+
+
+
+
+
+    <tr  *ngFor="let giftcard of giftcards;  let i = index"  style="color:white!important;" >
+<td><button type="button" class=""  data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+i" data-bs-target="#staticBackdrop"  ><i class='fa fa-shopping-cart'></i> Comprar </button> <button type="button" class="btn btn-primary text-center" >
+     Open modal
+   </button></td>
+      <td><a id="tGc" class="" [routerLink]="['/giftcard-edit',giftcard._id]"><span id="tGc">$ {{giftcard.amount}}</span></a></td>
+      <td><span id="tGc">{{giftcard.client}}</span></td>
+     <td><span id="tGc"> {{giftcard.consumedDate}}</span></td> 
+     <td><span id="tGc"> </span></td> 
+    </tr>
+    
+  </tbody>
+</table>
+
+      
+      </tr>
+
+    </table>
+    </div>-->

@@ -1,0 +1,146 @@
+<section class="min-vh-100" id="main">
+
+<!-- Page Content -->
+<div class="min-vh-100" id="">
+  <!-- Header/Home -->
+  <div class="min-vh-100 w3-padding-32 w3-center w3-black" id="home" >
+
+    <!--<i class="fa-solid fa-hat-cowboy"></i>-->
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span>
+
+      <img
+        width="100"
+        alt="Torito Logo"
+        src="https://res.cloudinary.com/dzyvb836r/image/upload/v1644816267/brand_gp5nbj.png"
+      ></h1>
+    <p>Burgers & Beers</p>
+    <div class="col-sm-12 " >
+
+
+
+<div class="login min-vh-100" id="checkoutGiftcard">
+			<form class="" #giftcardForm="ngForm" (ngSubmit)="checkout(giftcardForm)" id="formMP">
+
+				<label>PASO 1</label><br><br>
+
+				<label for="buyerName"> Comprador / Nombre</label><br>
+				<input type="text" name="buyerName" #buyerName="ngModel" [(ngModel)]="giftcard.buyerName" required />
+				<br>
+				<!--[(ngModel)]="project.name" 2 ways data binding para modificar el atributo name del project-->
+				<!-- el # indica que es la identificacion para Angular-->
+				<span class="form_error" *ngIf="buyerName.touched && !buyerName.valid">El nombre es
+					obligatorio</span><br>
+
+
+
+				<label for="amount"> Monto en ARS</label><br>
+				<input type="number" name="amount" #amount="ngModel" [(ngModel)]="giftcard.amount" required />
+				<!-- --><br>
+				<span class="form_error" *ngIf="amount.touched && amount.pristine">El monto es obligatorio.</span><br>
+
+
+
+				<label for="issuedDate"> Fecha de compra</label><br>
+				<input type="date" name="issuedDate" #issuedDate="ngModel" [(ngModel)]="giftcard.issuedDate"
+					required /><br>
+				<span class="form_error" *ngIf="issuedDate.touched && !issuedDate.valid">La fecha de compra es
+					obligatoria.</span><br>
+
+
+
+
+				<br>
+				
+
+				<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class='fa fa-shopping-cart'></i><!--<i class='fa fa-shopping-basket'></i>--> Comprar </button>
+
+				<br>
+				<br>
+				<br>
+
+
+			</form>
+
+</div>
+
+						<!-- Modal -->
+						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						  <div class="modal-dialog modal-dialog-centered">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="">Por favor, lee las instrucciones y confirma:</h5>
+
+						      
+						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						      </div>
+
+						      <div class="modal-body" >
+						        <div class="modalConfirm" role="alert" *ngIf="entendido==false" >
+
+
+													<p style=" text-align:left!important;">1. Saldremos a  <i class='fa fa-credit-card'></i> Mercado Pago y  una vez confirmada la compra,
+
+
+													  <strong> regresaremos al sitio.
+													  <br> <br>
+												
+												Por favor, no interrumpas el proceso de compra.</strong></p>
+
+																						
+												<form class="Formulario" #giftcardForm="ngForm" (ngSubmit)="checkout(giftcardForm)" id="formMP">
+
+														<br>
+														<label for="buyerName"><i class='fa fa-user'></i> Comprador / Nombre:</label><br>
+														<label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.buyerName"><br>
+															<h4> {{giftcard.buyerName}}
+															</h4></label>
+
+														
+														<br><br>
+														
+														<label for="amount"><i class='fas fa-money-check-alt'></i> $ Monto en ARS:</label><br>
+
+															<label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.amount"><br>
+																<h4>$ {{giftcard.amount}}
+																</h4></label>
+														<!-- --><br><br>
+														<label for="issuedDate"><i class='fa fa-calendar'></i> Fecha de compra:</label><br>
+														
+														<label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.issuedDate"><br>
+															<h4> {{giftcard.issuedDate}}</h4></label>
+
+															<br>
+															<br><br>
+
+										<div class="modal-footer text-center">
+						       <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+						       <!-- <button type="button" class="btn btn-primary">Understood</button>-->
+						      
+												 			<button  class="btn btn-outline-dark" type="submit"  [disabled]="!giftcardForm.form.valid"> <i class='fas fa-rocket me-2'></i> A Mercado Pago </button>
+
+																		<br>
+															</div>
+													</form>
+									<!--<button class="btn btn-warning" (click)="entendidoMet()">Ok</button>-->
+										</div>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+<!--FIN MODAL-->
+
+
+
+				</div>
+	  </div>
+</div>
+
+  
+
+
+
+</section>
+
+
+

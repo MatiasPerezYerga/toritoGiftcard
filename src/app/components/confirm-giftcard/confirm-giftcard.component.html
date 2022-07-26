@@ -1,0 +1,212 @@
+        <section class="min-vh-100" id="main">
+
+    <!-- Page Content -->
+    <div class="min-vh-100" id="">
+      <!-- Header/Home -->
+      <div class="min-vh-100 w3-padding-32 w3-center w3-black" id="home" >
+
+        <!--<i class="fa-solid fa-hat-cowboy"></i>-->
+        <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span>
+
+          <img
+            width="100"
+            alt="Torito Logo"
+            src="https://res.cloudinary.com/dzyvb836r/image/upload/v1644816267/brand_gp5nbj.png"
+          ></h1>
+        <p>Burgers & Beers</p>
+        <div class="col-sm-12 " >
+
+
+
+<div class="login min-vh-100" id="confirmGiftcard">
+    			<form class="" #giftcardForm="ngForm" (ngSubmit)="checkout(giftcardForm)" id="formMP">
+
+    				<br>
+
+    <div class="row" >
+        <div class="col">
+          <label for="buyerName"><i class='fa fa-user'></i><label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.buyerName"><br>
+    									<p id="tableValues">&nbsp;{{giftcard.buyerName}}
+    									</p></label></label>
+        </div>
+        <div class="col">
+          <label for="amount"><i class='fas fa-money-check-alt'></i><label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.amount"><br>
+    										<p  id="tableValues">&nbsp; $ {{giftcard.amount}}
+    										</p></label></label>
+        </div>
+        <div class="col">
+          <label for="issuedDate"><i class='fa fa-calendar'></i> <label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.issuedDate"  ><br>
+    									<p  id="tableValues" >&nbsp; {{giftcard.issuedDate}}</p></label></label>
+        </div>
+      </div>
+
+
+
+
+
+
+  <div class="row" >
+        <div class="col">
+          <label for="buyerName"><i class='fas fa-cash-register'></i><label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.buyerName"><br>
+                      <p id="tableValues">&nbsp;{{giftcard.payment_id}}
+                      </p></label></label>
+        </div>
+        <div class="col">
+          <label for="amount"><i class='fas fa-coins'></i><label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.amount"><br>
+                        <p  id="tableValues">&nbsp; $ {{giftcard.status}}
+                        </p></label></label>
+        </div>
+        <div class="col">
+          <label for="issuedDate"><i class='fa fa-credit-card'></i> <label type="text" name="status" #status="ngModel" [(ngModel)]="giftcard.issuedDate"  ><br>
+                      <p  id="tableValues" >&nbsp; {{giftcard.payment_type}}</p></label></label>
+        </div>
+      </div>
+
+    			</form>
+
+    				<div class="col-sm" style="text-align: center;">
+
+                 					<form style="color:white" class="Formulario" #giftcardForm2="ngForm"
+    								(ngSubmit)="confirmarPago(giftcardForm2);giftcardForm2.resetForm()">
+
+                    <br>
+                    <br>
+                    <span class="alert alert-success" role="alert"
+                      *ngIf="giftcard.status==='approved'">payment checked!</span>
+                    <span class="alert alert-warning" role="alert" *ngIf="giftcard.status===''"> waiting
+                      payment!</span>
+
+                    <span class="alert alert-danger" role="alert" *ngIf="giftcard.status==='denied'">
+                      payment failed!</span>
+                       <br>
+                        <br><br>
+
+
+    								<label>PASO 2</label><br>
+    								<br>
+    								<label for="buyerEmail" id="giftcardForm2">Email comprador:</label><br>
+    								<input type="text" name="buyerEmail" #buyerEmail="ngModel"
+    									[(ngModel)]="giftcard.buyerEmail" required /><br>
+    								<span class="form_error" *ngIf="buyerEmail.touched && !buyerEmail.valid">El cliente /
+    									agasajado es obligatorio</span><br>
+
+
+                      <!--
+    								<label for="payment_id">Ticket</label><br>
+    								<input type="number" name="payment_id" #payment_id="ngModel"
+    									[(ngModel)]="giftcard.payment_id" /><br>
+    								<span class="form_error" *ngIf="payment_id.touched && !payment_id.valid">El pago es
+    									obligatorio.</span><br>
+
+
+    								<label for="payment_type">Metodo de pago usado </label><br>
+    								<input type="text" name="payment_type" #payment_type="ngModel"
+    									[(ngModel)]="giftcard.payment_type" required /><br>
+    								<span class="form_error" *ngIf="payment_type.touched && !payment_type.valid">El método
+    									de pago es obligatorio.</span><br>
+
+    								<label for="status">Status del pago</label><br>
+    								<label type="text" name="status" #status="ngModel"
+    									[(ngModel)]="giftcard.status"><br>{{giftcard.status}}</label>-->
+    								
+    					
+    								<!-- <label for ="consumedDate">consumedDate </label>
+    								   <input type="text" name="consumedDate" #consumedDate="ngModel"[(ngModel)]="giftcard.consumedDate" required/><br>
+    								   <span class="form_error" *ngIf="consumedDate.touched && !consumedDate.valid">Los lenguajes o tecnologías son necesarias.</span>-->
+    								<label for="client">Nombre de cliente o agasajado:</label><br>
+    								<input type="text" name="client" #client="ngModel" [(ngModel)]="giftcard.client"
+    									required /><br>
+    								<span class="form_error" *ngIf="client.touched && !client.valid">El cliente / agasajado
+    									es obligatorio</span><br>
+
+
+
+    								<label for="emailClient">Email del Cliente o agasajado:</label><br>
+    								<input type="text" name="emailClient" #emailClient="ngModel"
+    									[(ngModel)]="giftcard.emailClient" required /><br>
+    								<span class="form_error" *ngIf="emailClient.touched && !emailClient.valid">El email del
+    									cliente / agasajado es obligatorio</span><br>
+
+
+
+
+
+    								<label for="dni">Dni:</label><br>
+    								<input type="number" name="dni" #dni="ngModel" [(ngModel)]="giftcard.dni" required
+    									min="1000000" /><br>
+    								<span class="form_error" *ngIf="dni.touched && !dni.valid">El dni del cliente /
+    									agasajado está incompleto o no es válido</span><br>
+
+    								<label for="phoneClient"> Teléfono de contacto: </label><br>
+    								<input type="number" name="phoneClient" #phoneClient="ngModel"
+    									[(ngModel)]="giftcard.phoneClient" required min="1000000000" /><br>
+    								<span class="form_error" *ngIf="phoneClient.touched && !phoneClient.valid">El teléfono
+    									del cliente / agasajado está incompleto o no es válido</span><br>
+
+
+
+
+
+
+
+
+
+    								<p>
+
+    									<br>
+    									<button class="btn btn-success" type="submit" value="Confirmar!"
+    										[disabled]="!giftcardForm2.form.valid"><i class='fa fa-paper-plane-o'></i> Confirmar! </button>
+    									<!--boton de envio -->
+    								</p>
+
+    								<div class="alert alert-success" role="alert" *ngIf="statuss =='success'">
+    									Se ha confirmado la compra! Se enviarán notificaciones con los detalles.</div>
+
+    								<div class="invisible">
+
+    									<label for="buyerName">Comprador / Nombre</label><br>
+    									<input type="text" name="buyerName" #buyerName="ngModel"
+    										[(ngModel)]="giftcard.buyerName" required /> <br>
+    									<!--[(ngModel)]="project.name" 2 ways data binding para modificar el atributo name del project-->
+    									<!-- el # indica que es la identificacion para Angular-->
+    									<span class="form_error" *ngIf="buyerName.touched && !buyerName.valid">El nombre es
+    										obligatorio</span><br>
+
+
+
+    									<label for="amount">Monto en ARS</label><br>
+    									<input type="number" name="amount" #amount="ngModel" [(ngModel)]="giftcard.amount"
+    										required /><!-- --><br>
+    									<span class="form_error" *ngIf="amount.touched && amount.pristine">El monto es
+    										obligatorio.</span><br>
+
+
+
+    									<label for="issuedDate">Fecha de compra</label><br>
+    									<input type="date" name="issuedDate" #issuedDate="ngModel"
+    										[(ngModel)]="giftcard.issuedDate" required /><br>
+    									<span class="form_error" *ngIf="issuedDate.touched && !issuedDate.valid">La fecha de
+    										compra es obligatoria.</span><br>
+
+    								</div>
+
+
+
+    							</form>
+
+
+    						</div>
+</div>
+    	</div>
+      </div>
+    </div>
+
+      
+
+
+
+    </section>
+
+
+
+
