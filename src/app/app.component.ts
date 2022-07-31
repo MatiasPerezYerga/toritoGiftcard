@@ -52,7 +52,7 @@ export class AppComponent {
   async onLogout() {
     try {
       await this.authSvc.logout();
-     window.location.href = "http://localhost:4200/home";
+     window.location.href = "https://matiasperezyerga.github.io/toritoGiftcard/";
     } catch (error) {
       console.log(error);
     }
