@@ -75,7 +75,7 @@ console.log(res);
 
           }
         },
-        (err)=> console.log("Como te atreves a ingresao algo incorrecto!")
+        (err)=> console.log("Como te atreves a ingresar algo incorrecto!")
 
         )
       );

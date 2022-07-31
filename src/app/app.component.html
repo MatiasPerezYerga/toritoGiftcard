@@ -65,10 +65,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
                  <i class='fas fa-book-open'> </i> <br>
                   <p>MENU</p>
                 </a>
-                <a routerLink="/showroom" class="w3-bar-item w3-button " id="myNavbar2">
+                <a routerLink='/showroom' class="w3-bar-item w3-button " id="myNavbar2">
                   <i class='fas fa-money-check-alt'  > </i> <br>GIFTCARD
                 </a>
-                <a routerLink="/contact" class="w3-bar-item w3-button " id="myNavbar2">
+                <a routerLink='/contact' class="w3-bar-item w3-button " id="myNavbar2">
                   <i class="fa fa-phone "></i><br>
                   <p class="m-1">CONTACT</p>
                 </a>
@@ -86,12 +86,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
                   <a routerLink='/home' class="w3-bar-item w3-button" id="btnNavBar">HOME</a>
                   <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="w3-bar-item w3-button" id="btnNavBar">MENU</a>
                   <a routerLink='/showroom' class="w3-bar-item w3-button" id="btnNavBar">GIFTCARD</a>
-                  <a routerLink="/contact" class="w3-bar-item w3-button" id="btnNavBar">CONTACT</a>
+                  <a routerLink='/contact' class="w3-bar-item w3-button" id="btnNavBar">CONTACT</a>
                 </div>
                 <div class=" w-100" id="myNavbar2" *ngIf=(user) >
                 <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
                   <label  id="user" class="w3-bar-item "  ><i class='fas fa-hat-cowboy-side'></i> User: {{user}}</label>
-                  <a  id="btnGiftcards" routerLink="/giftcards" class="w3-bar-item " s><i class='fa fa-window-restore'></i> Giftcards</a>
+                  <a  id="btnGiftcards" routerLink='/giftcards' class="w3-bar-item" s><i class='fa fa-window-restore'></i> Giftcards</a>
                   <label  id="lblMyNav2"class="w3-bar-item " ></label>
                   <a  class="btn-sm btn-warning " (click)="onLogout()" id="logOut"><i class='fa fa-sign-out'></i> Log Out</a>
                 </div>
