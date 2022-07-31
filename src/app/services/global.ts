@@ -1,5 +1,5 @@
 export var Global ={
-	url:'http://localhost:3000/api/'
+	url:'https://api-torito-giftcard-nodejs.herokuapp.com/api/'
 	/*https://localhost:3000/api/  localhost:3000/api/ save-giftcard*/
 }
 

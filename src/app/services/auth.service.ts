@@ -18,7 +18,11 @@ import { Router } from '@angular/router';
 export class AuthService {
 
 //creamos 2 propiedades de nuestro server
-  AUTH_SERVER: string = 'http://localhost:3000/api';
+//Para Sandbox
+  //AUTH_SERVER: string = 'http://localhost:3000/api';
+
+ //Para PROD
+  AUTH_SERVER: string = 'https://api-torito-giftcard-nodejs.herokuapp.com/api';
   authSubject = new BehaviorSubject(false);
   private token: any;
   //private Desol= new BehaviorSubject(false);
