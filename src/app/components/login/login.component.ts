@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
 onLogin(form: any): void {
     this.authService.login(form.value).subscribe(res => {
 
-      //this.router.navigateByUrl('/giftcards?authSubject=true');// Si el usuario puede hacer login lo redireccionamos ahi.
-       window.location.href = "https://matiasperezyerga.github.io/toritoGiftcard/giftcards?authSubject=true";
+     this.router.navigateByUrl('/giftcards?authSubject=true');// Si el usuario puede hacer login lo redireccionamos ahi.
+      // window.location.href = "https://matiasperezyerga.github.io/toritoGiftcard/giftcards?authSubject=true";
       //DEBERIA AGREGAR ALGO AL LOGIN NEGADO
     });
   }
