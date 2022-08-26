@@ -87,8 +87,7 @@
     								<label for="buyerEmail" id="giftcardForm2">Email comprador:</label><br>
     								<input type="text" name="buyerEmail" #buyerEmail="ngModel"
     									[(ngModel)]="giftcard.buyerEmail" required /><br>
-    								<span class="form_error" *ngIf="buyerEmail.touched && !buyerEmail.valid">El cliente /
-    									agasajado es obligatorio</span><br>
+    								<span class="form_error" *ngIf="buyerEmail.touched && !buyerEmail.valid">El cliente / agasajado es obligatorio</span><br>
 
 
                       <!--
@@ -142,13 +141,6 @@
     									[(ngModel)]="giftcard.phoneClient" required min="1000000000" /><br>
     								<span class="form_error" *ngIf="phoneClient.touched && !phoneClient.valid">El teléfono
     									del cliente / agasajado está incompleto o no es válido</span><br>
-
-
-
-
-
-
-
 
 
     								<p>

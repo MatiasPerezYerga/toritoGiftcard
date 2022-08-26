@@ -140,14 +140,14 @@ checkout(form:any){
     localStorage.setItem("buyerName",this.giftcard.buyerName);
     localStorage.setItem("amount", this.giftcard.amount.toString());
     localStorage.setItem("issuedDate",this.giftcard.issuedDate);
-
+ console.log("Realizando petición a mercado y preparando checkout...");
 
     this._giftcardService.buyGiftcard(this.giftcard).subscribe(
        
             response =>{
               
              
-           console.log("Realizando petición a mercado y preparando checkout...");
+          
           
            console.log(response.response.init_point);   
      /* CON LA RESPONSE QUE ME LLEGA DEL BACKEND  REDIRECCION AL USUARIO*/
@@ -162,7 +162,8 @@ checkout(form:any){
              
                         
             },
-            error =>{console.log(<any> error+"ESTA TIRANDO ERROR NO SE PORQUE");}
+            //+"ESTA TIRANDO ERROR NO SE PORQUE"
+            error =>{console.log(<any> error);}
         );
 
 
